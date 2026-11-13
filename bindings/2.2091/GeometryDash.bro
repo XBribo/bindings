@@ -19170,13 +19170,14 @@ class ReadArchive {
     ReadArchive(std::string const&, char const*, GJBaseGameLayer*);
 
     void process(GameObject*&) = win 0x528780;
-    TodoReturn process(bool&);
+    void process(bool&);
     void process(cocos2d::CCPoint&) = win 0x528430;
     void process(cocos2d::ccColor3B&) = win 0x528500;
     void process(cocos2d::ccHSVValue&) = win 0x528600;
-    TodoReturn process(double&);
-    TodoReturn process(float&);
-    TodoReturn process(int&);
+    void process(double&);
+    void process(float&);
+    void process(int&);
+    void process(std::map<int, int>&) = win 0x52cfe0;
     void process(std::map<int, EnterEffectAnimValue>&) = win 0x52c150;
     void process(std::map<int, bool>&) = win 0x529120;
     void process(std::map<std::pair<GJGameEvent, int>, int>&) = win 0x5297b0;
@@ -25357,14 +25358,15 @@ class WorldSelectLayer : cocos2d::CCLayer, BoomScrollLayerDelegate {
 [[link(android)]]
 class WriteArchive {
     TodoReturn getString();
-    TodoReturn process(GameObject*&);
-    TodoReturn process(bool&);
+    void process(GameObject*&);
+    void process(bool&);
     void process(cocos2d::CCPoint&) = win 0x5213d0;
     void process(cocos2d::ccColor3B&) = win 0x5214e0;
     void process(cocos2d::ccHSVValue&) = win 0x5215b0;
-    TodoReturn process(double&);
-    TodoReturn process(float&);
-    TodoReturn process(int&);
+    void process(double&);
+    void process(float&);
+    void process(int&);
+    void process(std::map<int, int>&) = win 0x525ce0;
     void process(std::map<int, EnterEffectAnimValue>&) = win 0x523280;
     void process(std::map<int, bool>&) = win 0x522090;
     void process(std::map<std::pair<GJGameEvent, int>, int>&) = win 0x522850;
