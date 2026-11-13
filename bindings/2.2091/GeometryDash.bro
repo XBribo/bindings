@@ -17728,7 +17728,7 @@ class PlayerCheckpoint : cocos2d::CCNode {
 
     virtual bool init() = win 0x52ed00, imac 0x5d7280, m1 0x522f28, ios 0x19b4c8;
 
-    TodoReturn deserializeFromString(std::string const&, GJBaseGameLayer*);
+    void deserializeFromString(std::string const&, GJBaseGameLayer*);
     std::string serializeToString() = win 0x52ed40;
     TodoReturn verifyMatch(PlayerCheckpoint*);
 
@@ -19165,7 +19165,7 @@ class RateStarsModLayer : FLAlertLayer, UploadPopupDelegate, UploadActionDelegat
     void updateDSprite() = win 0x560280;
 }
 
-[[link(android)]]
+[[link(android), depends(FMODAudioState, GJGameState, GJShaderState)]]
 class ReadArchive {
     ReadArchive(std::string const&, char const*, GJBaseGameLayer*);
 
@@ -19176,6 +19176,9 @@ class ReadArchive {
     void process(cocos2d::ccHSVValue&) = win 0x528600;
     void process(double&);
     void process(float&);
+    void process(FMODAudioState&) = win 0x54cc50;
+    void process(GJGameState&) = win 0x545920;
+    void process(GJShaderState&) = win 0x54a560;
     void process(int&);
     void process(std::map<int, int>&) = win 0x52cfe0;
     void process(std::map<int, EnterEffectAnimValue>&) = win 0x52c150;
@@ -25355,7 +25358,7 @@ class WorldSelectLayer : cocos2d::CCLayer, BoomScrollLayerDelegate {
     bool m_buttonsLocked;
 }
 
-[[link(android)]]
+[[link(android), depends(FMODAudioState, GJGameState, GJShaderState)]]
 class WriteArchive {
     TodoReturn getString();
     void process(GameObject*&);
@@ -25365,6 +25368,9 @@ class WriteArchive {
     void process(cocos2d::ccHSVValue&) = win 0x5215b0;
     void process(double&);
     void process(float&);
+    void process(FMODAudioState&) = win 0x54ca50;
+    void process(GJGameState&) = win 0x543730;
+    void process(GJShaderState&) = win 0x547690;
     void process(int&);
     void process(std::map<int, int>&) = win 0x525ce0;
     void process(std::map<int, EnterEffectAnimValue>&) = win 0x523280;
